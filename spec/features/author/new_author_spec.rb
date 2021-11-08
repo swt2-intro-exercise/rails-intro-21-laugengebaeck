@@ -1,12 +1,12 @@
 require 'rails_helper'
 
- describe "New author page", type: :feature do
-   it "should exist at 'new_author_path' and render withour error" do
-     # https://guides.rubyonrails.org/routing.html#path-and-url-helpers
-     visit new_author_path
-   end
+describe 'New author page', type: :feature do
+  it "should exist at 'new_author_path' and render without error" do
+    # https://guides.rubyonrails.org/routing.html#path-and-url-helpers
+    visit new_author_path
+  end
 
-   it "should have text inputs for an author's first name, last name, and homepage" do
+  it "should have text inputs for an author's first name, last name, and homepage" do
     visit new_author_path
     # these are the standard names given to inputs by the Rails form builder
     expect(page).to have_field('author[first_name]')
@@ -14,7 +14,7 @@ require 'rails_helper'
     expect(page).to have_field('author[homepage]')
   end
 
-  it "should create an author on submitting the form" do
+  it 'should create an author on submitting the form' do
     old_count = Author.count
     visit new_author_path
     page.fill_in 'author[first_name]', with: 'Alan'
@@ -24,4 +24,4 @@ require 'rails_helper'
     new_count = Author.count
     expect(new_count).to be > old_count
   end
- end
+end
