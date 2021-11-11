@@ -20,4 +20,9 @@ RSpec.describe Paper, type: :model do
     paper = Paper.new(title: "COMPUTING MACHINERY AND INTELLIGENCE", venue: "mind 49: 433-460", year: "1950A")
     expect(paper).to_not be_valid
   end
+
+  it 'should have an empty list of authors when created' do
+    paper = Paper.new
+    expect(paper.authors).to be_empty
+  end
 end
