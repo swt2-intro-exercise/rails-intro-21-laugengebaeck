@@ -17,3 +17,6 @@
 !/log/.keep
 /tmp
 /nbproject
+
+# RubyMine project files
+/.idea
